@@ -1,18 +1,101 @@
-.movie-info{
+#home .movie-info{
     position:absolute;
-    top:50px;
+    top:40%;
     left:15px;
     z-index:100;
     max-width:300px;
     background:transparent;
     color:white;
 }
-
-#second-view{
-    background: url(../images/bg.jpg) no-repeat center center fixed; 
+#home .navbar{
+    z-index: 100;
+    position:fixed!important;
+    top:0;
+	width:100%;
+	vertical-align: middle;
+}
+#home #second-view{
+    background: url(../images/bg2.jpeg) no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    height: 100vh;
+    height: auto;
+}
+
+/*Input style from: https://codepen.io/912lab/pen/LsplC*/
+#home input {
+    
+	outline: none;
+}
+#home input[type=search] {
+	-webkit-appearance: textfield;
+	-webkit-box-sizing: content-box;
+	font-family: inherit;
+	font-size: 100%;
+}
+#home input::-webkit-search-decoration,
+#home input::-webkit-search-cancel-button {
+	display: none; 
+}
+#home input[type=search] {
+	background: #ededed url(https://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;
+	border: solid 1px #ccc;
+	padding: 9px 10px 9px 32px;
+	width: 80px;
+	
+	-webkit-border-radius: 10em;
+	-moz-border-radius: 10em;
+	border-radius: 10em;
+	
+	-webkit-transition: all .5s;
+	-moz-transition: all .5s;
+	transition: all .5s;
+}
+#home input[type=search]:focus {
+	width: 250px;
+	max-width: 90vw;
+	background-color: #fff;
+	border-color: #66CC75;
+	
+	-webkit-box-shadow: 0 0 5px rgba(109,207,246,.5);
+	-moz-box-shadow: 0 0 5px rgba(109,207,246,.5);
+	box-shadow: 0 0 5px rgba(109,207,246,.5);
+}
+#home input:-moz-placeholder {
+	color: #999;
+}
+#home input::-webkit-input-placeholder {
+	color: #999;
+}
+/*End of input style*/
+#top-rated{
+	padding-top:50px;
+	padding-left:50px;
+}
+#search-result{
+	display:flex;
+	flex-direction: row;
+	flex-flow:row wrap;
+	justify-content: center;
+	align-items: center;
+	padding-top:50px;
+}
+#search-result img{
+	margin:20px;
+	width:400px;
+	height: 400px;
+	-webkit-box-shadow: 7px 6px 11px 3px rgba(130,130,130,1);
+	-moz-box-shadow: 7px 6px 11px 3px rgba(130,130,130,1);
+	box-shadow: 7px 6px 11px 3px rgba(130,130,130,1);
+	
+}
+#chart-wrapper{
+	width:60%;
+	height: auto;
+	margin:auto;
+	margin-top:50px;
+	border-bottom-style: solid;
+	border-bottom-color:black;
+	border-bottom-width: 3px;
 }
