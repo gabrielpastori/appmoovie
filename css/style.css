@@ -1,3 +1,13 @@
+.movie-info{
+    position:absolute;
+    top:50px;
+    left:15px;
+    z-index:100;
+    max-width:300px;
+    background:transparent;
+    color:white;
+}
+
 #second-view{
     background: url(../images/bg.jpg) no-repeat center center fixed; 
     -webkit-background-size: cover;
