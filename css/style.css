@@ -156,14 +156,14 @@
 		font-size:0.8em;
 	}
 	#home #chart-wrapper{
-		width:90%;
+		width:95%;
 	}
 	#home #search-result img{
 		width:250px;
 		height: 250px;
 	}
 	#home #top-rated{
-		padding-top:0;
+		padding-top:25px;
 		padding-left:0;
 	}
 }
