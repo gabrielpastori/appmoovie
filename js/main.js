@@ -77,8 +77,11 @@ $(window).on("load",function(){
             .removeClass("navbar-light bg-light");
         }
     });
+    
     $("#movie-search").keyup(function(){
+        $(window).scrollTop($(".navbar").height()+$(".rslides").height()+$("#top-rated").height()+$("#chart-wrapper").height());
         if($(this).val()==""){
+            $(window).scrollTop("0");
             $("#search-result").empty();
             $("#search-title").remove();
         }else{

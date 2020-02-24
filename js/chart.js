@@ -17,17 +17,6 @@ $.ajax({
     }
   }
 });
-/*$.getJSON("https://api.themoviedb.org/3/movie/top_rated?api_key="+KEY+"&language="+LANGUAGE+'&region='+REGION+"&page=1").then(function(response){
-  console.log(response);
-  var results = response.results;
-  
-  for(i=0;i<results.length;i++){
-      var movieObj={};
-      movieObj['vote_count']=results[i].vote_count;
-      movieObj['title']=formatLabel(results[i].title,22);
-      allMovieInfos.push(movieObj)
-  }
-});*/
 
 function formatLabel(str, maxwidth){
   var sections = [];
@@ -161,11 +150,6 @@ $("#inputGroupSelect01").change(function(){
 
       }
     });
-    /*
-    var labels=['a','b','c','d','e','f'];
-    var dataS=[1,2,3,4,5,6];
-    horizontalChart.destroy();
-    horizontalChart = new Chart(document.getElementById("bar-chart-horizontal"), { type: 'horizontalBar', data: { labels: labels, datasets: [ { label: "Votos", backgroundColor: "#3e95cd", data: dataS } ] }, options: { responsive:true, maintainAspectRatio:true, legend: { display: false }, scales:{ yAxes: [{ display: false }], xAxes: [{ display: false, ticks: { min: 0 } }] }, title: { display: false, text: 'Predicted world population (millions) in 2050' } }});*/
   }else{
     allMovieInfos=[];
     $.ajax({
