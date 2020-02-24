@@ -2,6 +2,7 @@ $(function() {
     $(".rslides").responsiveSlides();
   });
 $(".rslides").responsiveSlides({
+
   auto: true,             // Boolean: Animate automatically, true or false
   speed: 500,            // Integer: Speed of the transition, in milliseconds
   timeout: 5000,          // Integer: Time between slide transitions, in milliseconds
@@ -17,6 +18,7 @@ $(".rslides").responsiveSlides({
   manualControls: "",     // Selector: Declare custom pager navigation
   namespace: "rslides",   // String: Change the default namespace used
   before: function(){},   // Function: Before callback
+  
   after: function(){}     // Function: After callback
 });
 

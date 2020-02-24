@@ -139,6 +139,20 @@ $("#inputGroupSelect01").change(function(){
             movieObj['title']=formatLabel(results[i].title,22);
             allMovieInfos.push(movieObj)
         }
+        if($("#inputGroupSelect02 option:selected").text()=="Mais votado"){
+          allMovieInfos.sort(function(a,b){
+            if(a.vote_count<b.vote_count) return 1;
+            if(a.vote_count>b.vote_count) return -1;
+            return 0;
+          })
+        }else{
+          allMovieInfos.sort(function(a,b){
+            if(a.vote_count<b.vote_count) return -1;
+            if(a.vote_count>b.vote_count) return 1;
+            return 0;
+          })
+
+        }
         var movieInfos=extractMovieInfos(allMovieInfos);
         var movieLabels=movieInfos[0];
         var movieData=movieInfos[1];
@@ -192,6 +206,9 @@ $("#inputGroupSelect01").change(function(){
     });
   }
 });
+$("#inputGroupSelect01").trigger("change");
+$("#inputGroupSelect02").trigger("change");
+
 $("#inputGroupSelect02").change(function(){
   $("#inputGroupSelect01").trigger("change");
 
