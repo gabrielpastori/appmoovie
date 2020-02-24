@@ -66,7 +66,7 @@ var home = {template:
 var sobre = {template: 
 `
 <div>
-<router-link to="/">EAE TESTE</router-link>
+<router-link to="/">Home</router-link>
 </div>
 
 
