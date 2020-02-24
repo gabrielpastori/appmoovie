@@ -1,3 +1,4 @@
+$(window).on("load",function(){
 var allMovieInfos=[];
 
 $.ajax({
@@ -195,3 +196,4 @@ $("#inputGroupSelect02").change(function(){
   $("#inputGroupSelect01").trigger("change");
 
 })
+});

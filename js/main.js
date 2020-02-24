@@ -5,7 +5,6 @@ $(window).on("load",function(){
     function nowPlaying(){
         var movieIds = [];
         $.getJSON('https://api.themoviedb.org/3/movie/now_playing?api_key='+KEY+'&language='+LANGUAGE+'&region='+REGION).then(function(response){
-            console.log(response)
             for(var i=0;i<3;i++){
             
                 var eachResult=response.results[i];
@@ -13,7 +12,6 @@ $(window).on("load",function(){
                 $($(".slide-image")[i]).attr("src","https://image.tmdb.org/t/p/original"+eachResult.backdrop_path)
                 $($(".movie-info h4")[i]).text(eachResult.title);
             }
-            console.log(movieIds)
             movieIds.forEach(function(id,index){
                 $.getJSON("https://api.themoviedb.org/3/movie/"+id+"?api_key="+KEY+'&language='+LANGUAGE).then(function(responseForId){
                     $($(".movie-duration")[index]).text("Duração: "+responseForId.runtime+" minutos.");
@@ -42,7 +40,10 @@ $(window).on("load",function(){
             if(arr[i].poster_path==null){
                 limit++;
             }else{
-                $("#search-result").append($("<img>").attr("src","https://image.tmdb.org/t/p/original"+arr[i].poster_path));
+                
+                var imageUrl = "https://image.tmdb.org/t/p/original"+arr[i].poster_path;
+                var routerView = "<a href='#/sobre' class='router-img'><img src="+imageUrl+" style=></img></a>";
+                $("#search-result").append(routerView);
             }
         }
     }
@@ -62,9 +63,6 @@ $(window).on("load",function(){
     $("#movie-search").keyup(function(){
         if($(this).val()==""){
             $("#search-result").empty();
-
-
-            console.log("aaa");
         }else{
             $.getJSON("https://api.themoviedb.org/3/search/movie?api_key="+KEY+"&language="+LANGUAGE+"&query="+$(this).val()).then(function(response){
                 arr = response.results;
@@ -72,7 +70,7 @@ $(window).on("load",function(){
             });
         }
     });
-
+    
     
 
     

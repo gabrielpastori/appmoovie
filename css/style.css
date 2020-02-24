@@ -69,11 +69,11 @@
 	color: #999;
 }
 /*End of input style*/
-#top-rated{
+#home #top-rated{
 	padding-top:50px;
 	padding-left:50px;
 }
-#search-result{
+#home #search-result{
 	display:flex;
 	flex-direction: row;
 	flex-flow:row wrap;
@@ -81,7 +81,7 @@
 	align-items: center;
 	padding-top:50px;
 }
-#search-result img{
+#home #search-result img{
 	margin:20px;
 	width:400px;
 	height: 400px;
@@ -90,12 +90,12 @@
 	box-shadow: 7px 6px 11px 3px rgba(130,130,130,1);
 	
 }
-#chart-wrapper{
+#home #chart-wrapper{
 	width:60%;
 	height: auto;
 	margin:auto;
 	margin-top:50px;
 	border-bottom-style: solid;
-	border-bottom-color:black;
+	border-bottom-color:rgb(172, 172, 172);
 	border-bottom-width: 3px;
 }
