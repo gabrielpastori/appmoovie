@@ -1,3 +1,6 @@
+*{
+	font-family: 'Lato';
+}
 #home .movie-info{
     position:absolute;
     top:40%;
@@ -127,6 +130,8 @@
 	margin-top:70px;
 	margin-bottom:0px;
 	text-align: center;
+	font-family: 'Open Sans';
+	color:rgb(0, 45, 54);
 }
 #search-result img:hover{
 	opacity: 0.7;

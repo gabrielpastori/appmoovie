@@ -6,7 +6,6 @@ $(window).on("load",function(){
         var movieIds = [];
         $.getJSON('https://api.themoviedb.org/3/movie/now_playing?api_key='+KEY+'&language='+LANGUAGE+'&region='+REGION).then(function(response){
             for(var i=0;i<3;i++){
-            
                 var eachResult=response.results[i];
                 movieIds.push(eachResult.id);
                 $($(".slide-image")[i]).attr("src","https://image.tmdb.org/t/p/original"+eachResult.backdrop_path)
@@ -99,9 +98,9 @@ $(window).on("load",function(){
             $(".modal-title").text(response.title);
             $("#modal-poster").attr("src",imageUrl);
             $("#movie-overview").text(response.overview);
-            $("#release-date").text("Lançamento: "+formatDate(new Date(response.release_date)));
-            $("#movie-revenue").text("Receita: "+formatMoney(response.revenue));
-            $("#movie-budget").text("Orçamento: "+formatMoney(response.budget));
+            $("#release-date").html("<b>Lançamento:</b> "+formatDate(new Date(response.release_date)));
+            $("#movie-revenue").html("<b>Receita:</b> "+formatMoney(response.revenue));
+            $("#movie-budget").html("<b>Orçamento:</b> "+formatMoney(response.budget));
             $(".progress-bar").css("width",response.vote_average*10+"%");
             $(".progress-bar").text("Avaliação média: "+response.vote_average);
         })
@@ -115,7 +114,7 @@ $(window).on("load",function(){
                 else movieCast+=", "
                 
             })
-            $("#movie-cast").text("Elenco: "+movieCast);
+            $("#movie-cast").html("<b>Elenco:</b> "+movieCast);
             
             
         })
