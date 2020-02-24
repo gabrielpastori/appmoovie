@@ -4,10 +4,13 @@ const REGION = 'BR';
 $(window).on("load",function(){
     function nowPlaying(){
         var movieIds = [];
+        
         $.getJSON('https://api.themoviedb.org/3/movie/now_playing?api_key='+KEY+'&language='+LANGUAGE+'&region='+REGION).then(function(response){
             for(var i=0;i<3;i++){
                 var eachResult=response.results[i];
                 movieIds.push(eachResult.id);
+                $($(".slide-image")[i]).attr("id",eachResult.id);
+
                 $($(".slide-image")[i]).attr("src","https://image.tmdb.org/t/p/original"+eachResult.backdrop_path)
                 $($(".movie-info h4")[i]).text(eachResult.title);
             }
@@ -28,6 +31,9 @@ $(window).on("load",function(){
             })
                 
         });
+        $(".slide-image").on("click",function(){
+            showModal($(this).attr("id"));
+        })
         
         
     }
@@ -91,12 +97,9 @@ $(window).on("load",function(){
             });
         }
     });
-    
-    $("#search-result").on("click","img",function(){
+    function showModal(movieId){
         $('#movieModal').modal('show');
-        var movieId=$(this).attr("id");
         $.getJSON("https://api.themoviedb.org/3/movie/"+movieId+"?api_key="+KEY+'&language='+LANGUAGE).then(function(response){
-            console.log(response);
             var imageUrl = "https://image.tmdb.org/t/p/original"+response.backdrop_path;
             $(".modal-title").text(response.title);
             $("#modal-poster").attr("src",imageUrl);
@@ -121,6 +124,11 @@ $(window).on("load",function(){
             
             
         })
+    }
+    $("#search-result").on("click","img",function(){
+        
+        var movieId=$(this).attr("id");
+        showModal(movieId);
 
         
 
