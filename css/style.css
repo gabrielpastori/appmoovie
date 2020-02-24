@@ -20,7 +20,8 @@
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    height: auto;
+	height: auto;
+	min-height: 80vh;
 }
 
 /*Input style from: https://codepen.io/912lab/pen/LsplC*/
@@ -98,4 +99,36 @@
 	border-bottom-style: solid;
 	border-bottom-color:rgb(172, 172, 172);
 	border-bottom-width: 3px;
+}
+.modal-body{
+	text-align: center;
+}
+#modal-poster{
+	filter:brightness(72%);
+	width:70%;
+	height: auto;
+	-webkit-box-shadow: 0 0 5px rgba(109,207,246,.5);
+	-moz-box-shadow: 0 0 5px rgba(109,207,246,.5);
+	box-shadow: 0 0 5px rgba(109,207,246,.5);
+}
+#sinopse{
+	margin-top:20px;
+	margin-bottom:0px;
+	text-align: left;
+}
+#movie-overview{
+	text-align:left;
+	margin-top:2px;
+}
+#movie-cast,#release-date,#movie-revenue,#movie-budget{
+	text-align: left;
+}
+#search-title{
+	margin-top:70px;
+	margin-bottom:0px;
+	text-align: center;
+}
+#search-result img:hover{
+	opacity: 0.7;
+
 }
