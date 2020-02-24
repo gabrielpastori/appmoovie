@@ -73,9 +73,7 @@
 #home input::-webkit-input-placeholder {
 	color: #999;
 }
-.input-group-text{
-	background-color:rgb(228, 245, 250)!important;
-}
+
 /*End of input style*/
 #home #top-rated{
 	padding-top:20px;
