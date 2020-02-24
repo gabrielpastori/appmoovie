@@ -64,7 +64,6 @@ function formatLabel(str, maxwidth){
 }
 
 function extractMovieInfos(arr){
-
   let labels=[]
   let data=[]
   for(var i=0;i<Math.min(6,arr.length);i++){
@@ -121,7 +120,6 @@ $("#inputGroupSelect01").change(function(){
       async: false, 
       success: function(response) {
         var results = response.results;
-        console.log(results)
         for(i=0;i<results.length;i++){
             var movieObj={};
             movieObj['vote_count']=results[i].vote_count;
@@ -159,7 +157,7 @@ $("#inputGroupSelect01").change(function(){
       async: false, 
       success: function(response) {
         var results = response.results;
-        for(i=0;i<Math.min(results.length,6);i++){
+        for(i=0;i<results.length;i++){
             var movieObj={};
             movieObj['vote_count']=results[i].vote_count;
             movieObj['title']=formatLabel(results[i].title,22);
