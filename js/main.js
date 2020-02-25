@@ -85,7 +85,7 @@ $(window).on("load",function(){
     });
     
     $("#movie-search").keyup(function(){
-        $(window).scrollTop($(".navbar").height()+$(".rslides").height()+$("#top-rated").height()+$("#chart-wrapper").height());
+        $(window).scrollTop($(".navbar").height()+$(".rslides").height()+$("#top-rated").height()+$("#chart-wrapper").height()+30);
         if($(this).val()==""){
             $(window).scrollTop("0");
             $("#search-result").empty();
