@@ -1,4 +1,4 @@
-const KEY="6f228a124b52956ac305a349079b7f2b"
+const KEY="a1570fcbcc4fc23b86690ddd459cc15e";
 const LANGUAGE = 'pt-BR';
 const REGION = 'BR';
 $(window).on("load",function(){
