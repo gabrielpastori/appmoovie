@@ -1,3 +1,4 @@
+/*SPA TRY*/
 var home = {template: 
 `
     <div id="home">
@@ -66,7 +67,7 @@ var home = {template:
 var sobre = {template: 
 `
 <div>
-<router-link to="/">Home</router-link>
+<router-link to="/">Back to Home</router-link>
 </div>
 
 
