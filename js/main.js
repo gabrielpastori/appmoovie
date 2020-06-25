@@ -6,13 +6,19 @@ $(window).on("load",function(){
         var movieIds = [];
         
         $.getJSON('https://api.themoviedb.org/3/movie/now_playing?api_key='+KEY+'&language='+LANGUAGE+'&region='+REGION).then(function(response){
-            for(var i=0;i<3;i++){
+            var moviesQtd=3;
+            var jumps=0;
+            for(var i=0;i<moviesQtd;i++){
                 var eachResult=response.results[i];
+                if(eachResult.backdrop_path==null){
+                    moviesQtd++;
+                    jumps++;
+                    continue;
+                }
                 movieIds.push(eachResult.id);
-                $($(".slide-image")[i]).attr("id",eachResult.id);
-
-                $($(".slide-image")[i]).attr("src","https://image.tmdb.org/t/p/original"+eachResult.backdrop_path)
-                $($(".movie-info h4")[i]).text(eachResult.title);
+                $($(".slide-image")[i-jumps]).attr("id",eachResult.id);
+                $($(".slide-image")[i-jumps]).attr("src","https://image.tmdb.org/t/p/original"+eachResult.backdrop_path)
+                $($(".movie-info h4")[i-jumps]).text(eachResult.title);
             }
             movieIds.forEach(function(id,index){
                 $.getJSON("https://api.themoviedb.org/3/movie/"+id+"?api_key="+KEY+'&language='+LANGUAGE).then(function(responseForId){
