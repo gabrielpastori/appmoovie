@@ -29,4 +29,4 @@ O objetivo deste teste é demonstrar suas habilidades com desenvolvimento web, p
  	2. Página de detalhes
  		- Mostrar detalhes dos filmes, exemplo: nome, imagem da capa, data de lançamento, elenco, etc...
   
-## Pronto para uso (index.html)
+## (index.html)
